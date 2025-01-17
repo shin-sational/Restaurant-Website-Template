@@ -20,14 +20,14 @@ body {
     --foreground: 0, 0%, 92%; /* #EBEBEB */ /* 基本のテキスト色 */
     --secondary-foreground: 0, 0%, 14%; /* #232323 */ /* ボタンのテキスト色 */
 
+    /*** 必要無くなった時に削除する ***/
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --destructive: 0 84.2% 60.2%;

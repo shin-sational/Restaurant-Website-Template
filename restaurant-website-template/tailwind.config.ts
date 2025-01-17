@@ -16,6 +16,7 @@ const config: Config = {
         h2: "hsla(var(--accent),1)", // 中見出し Appetizer
         h3: "hsla(var(--foreground),1)", // 小見出し Robson street
         otherText: "hsla(var(--foreground),1)", // その他のテキスト
+        buttonText: "hsla(var(--secondary-foreground),1)", // ボタンのテキスト
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -37,8 +38,7 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsla(var(--accent),1)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
