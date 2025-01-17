@@ -9,7 +9,15 @@ const CustomSectionTitle = ({
   className?: string;
 }) => {
   return (
-    <h2 className={cn("text-accent text-[40px] font-semibold", className)}>
+    <h2
+      className={cn(
+        "text-accent",
+        "text-[24px]",
+        "md:text-[40px]",
+        "font-semibold",
+        className
+      )}
+    >
       {children}
     </h2>
   );
