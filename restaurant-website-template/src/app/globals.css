@@ -14,8 +14,12 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --accent: 37, 45%, 55%; /* #C79D51 */ /* ボタンの背景色 */
+    --background: 0, 0%, 14%; /* #232323 */ /* 背景色 */
+    --secondary-background: 0, 0%, 20%; /* #333333 */ /* フッターの色 */
+    --foreground: 0, 0%, 92%; /* #EBEBEB */ /* 基本のテキスト色 */
+    --secondary-foreground: 0, 0%, 14%; /* #232323 */ /* ボタンのテキスト色 */
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -26,8 +30,6 @@ body {
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
