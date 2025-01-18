@@ -13,6 +13,16 @@ import {
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { NextRequest, NextResponse } from "next/server";
 
+/**
+ * Notionのデータベースを変更した際のメンテナンス方法
+ * 1. Notion.type.tsをアップデートする
+ * 2. GETメソッド内のreturn値のNotionのオブジェクト名をアップデートする
+ *
+ * 例) Drinkという項目を足した場合
+ * Notion.type.ts内にDrinkを追加する
+ * GETメソッド内のreturn値にDrinkを追加する
+ */
+
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     if (typeof MENU_ITEMS_DATABASE_ID === "undefined") {
