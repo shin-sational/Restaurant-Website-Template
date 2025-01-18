@@ -8,12 +8,9 @@ import { getNotionPropertyValue } from "@/lib/getNotionPropertyValue";
 import {
   MainBranchProperties,
   MenuItemsProperties,
-  NotionPage,
   SubBranchesProperties,
 } from "@/type/notion.Type";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { Description } from "@radix-ui/react-toast";
-import { Main } from "next/document";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, res: NextResponse) {
