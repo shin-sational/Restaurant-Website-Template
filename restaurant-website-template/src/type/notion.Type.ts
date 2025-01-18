@@ -164,7 +164,7 @@ export interface NotionUrlProperty {
  * Menu_Items データベースのプロパティ一覧
  */
 export interface MenuItemsProperties {
-  vegan: NotionCheckboxProperty;
+  Vegan: NotionCheckboxProperty;
   Description: NotionRichTextProperty;
   Category: NotionSelectProperty;
   Price: NotionNumberProperty;
