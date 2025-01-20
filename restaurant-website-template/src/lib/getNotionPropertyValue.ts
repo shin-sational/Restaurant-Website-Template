@@ -147,9 +147,9 @@ export function getNotionPropertyValue(
     case "files": {
       const files = property.files ?? [];
       // file.url または external.url を取得
-      value = files
-        .map((f: any) => f.file?.url || f.external?.url)
-        .filter(Boolean);
+      value =
+        files.length > 0 ? files[0].file?.url || files[0].external?.url : null;
+
       break;
     }
 
