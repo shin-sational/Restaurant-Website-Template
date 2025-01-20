@@ -24,6 +24,9 @@ export const ERROR_MESSAGES = {
         MAINTENANCE:
           "The server is currently under maintenance. Please try again later.",
       },
+      DATABASE: {
+        NO_DATABASE_ID: "No database id found",
+      },
       API: {
         INVALID: "Invalid request.",
         RATE_LIMIT: "Too many requests. Please try again later.",
@@ -66,6 +69,9 @@ export const ERROR_MESSAGES = {
       SERVER: {
         INTERNAL: "サーバーエラーが発生しました。後でもう一度お試しください。",
         MAINTENANCE: "サーバーは現在メンテナンス中です。後ほどお試しください。",
+      },
+      DATABASE: {
+        NO_DATABASE_ID: "データベースIDが見つかりません",
       },
       API: {
         INVALID: "無効なリクエストです。",

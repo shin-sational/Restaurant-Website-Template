@@ -12,9 +12,7 @@ import {
   SubBranchesProperties,
 } from "@/type/notion.Type";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { Instagram } from "lucide-react";
 import { NextRequest, NextResponse } from "next/server";
-import { parse } from "path";
 
 /**
  * Notionのデータベースを変更した際のメンテナンス方法
@@ -28,15 +26,22 @@ import { parse } from "path";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    if (typeof MENU_ITEMS_DATABASE_ID === "undefined") {
+    if (
+      typeof MENU_ITEMS_DATABASE_ID === "undefined" ||
+      typeof MAIN_BRANCH_INFO_DATABASE_ID === "undefined" ||
+      typeof SUB_BRANCHES_INFO_DATABASE_ID === "undefined"
+    ) {
       console.log("No database id found");
-      return;
+      return NextResponse.json(
+        { error: ERROR_MESSAGES.en.BACKEND.DATABASE.NO_DATABASE_ID },
+        { status: 500 }
+      );
     }
 
     const [allMenuItems, allMainBranches, allSubBranches] = await Promise.all([
-      await fetchAllItems(MENU_ITEMS_DATABASE_ID!),
-      await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID!),
-      await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID!),
+      await fetchAllItems(MENU_ITEMS_DATABASE_ID),
+      await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID),
+      await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID),
     ]);
 
     /**
