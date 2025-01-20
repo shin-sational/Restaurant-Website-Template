@@ -1,0 +1,6 @@
+export const NOTION_API_KEY = process.env.NOTION_API_KEY;
+export const MENU_ITEMS_DATABASE_ID = process.env.MENU_ITEMS_DATABASE_ID;
+export const MAIN_BRANCH_INFO_DATABASE_ID =
+  process.env.MAIN_BRANCH_INFO_DATABASE_ID;
+export const SUB_BRANCHES_INFO_DATABASE_ID =
+  process.env.SUB_BRANCHES_INFO_DATABASE_ID;
