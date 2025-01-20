@@ -41,6 +41,9 @@ export const ERROR_MESSAGES = {
           `Failed to load ${componentName}.`,
       },
     },
+    MESSAGES: {
+      ASK_FOR_DETAILS: "Please ask for details",
+    },
   },
   ja: {
     BACKEND: {
@@ -81,6 +84,9 @@ export const ERROR_MESSAGES = {
         LOADING_FAILED: (componentName: string) =>
           `${componentName}の読み込みに失敗しました。`,
       },
+    },
+    MESSAGES: {
+      ASK_FOR_DETAILS: "詳細はお問い合わせください。",
     },
   },
 } as const;

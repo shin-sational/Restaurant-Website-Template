@@ -3,6 +3,7 @@ import {
   MENU_ITEMS_DATABASE_ID,
   SUB_BRANCHES_INFO_DATABASE_ID,
 } from "@/config/ENV";
+import { ERROR_MESSAGES } from "@/config/errorMessage";
 import { fetchAllItems } from "@/lib/backend/notion";
 import { getNotionPropertyValue } from "@/lib/getNotionPropertyValue";
 import {
@@ -13,6 +14,7 @@ import {
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { Instagram } from "lucide-react";
 import { NextRequest, NextResponse } from "next/server";
+import { parse } from "path";
 
 /**
  * Notionのデータベースを変更した際のメンテナンス方法
@@ -58,27 +60,26 @@ export async function GET(req: NextRequest, res: NextResponse) {
       allSubBranches
     ) as unknown as SubBranchesProperties[];
 
-    /** TODO
-     * 空白時の文言を追加　（オブジェクト化するべき）
-     * MainInfoの型を整形
-     * */
     const parseMenuItems = menuItemsProperties.map((item) => {
       return {
-        Name: getNotionPropertyValue(item.Name) ?? "",
-        Category: getNotionPropertyValue(item.Category) ?? "",
-        Price:
-          Number(getNotionPropertyValue(item.Price)) ?? "詳細をお尋ねください",
+        Name:
+          getNotionPropertyValue(item.Name) ??
+          ERROR_MESSAGES.en.MESSAGES.ASK_FOR_DETAILS,
+        Category: getNotionPropertyValue(item.Category),
+        Price: Number(getNotionPropertyValue(item.Price)),
         Description: getNotionPropertyValue(item.Description),
-        Photo: getNotionPropertyValue(item.Photo)[0] || "",
-        Spicy: getNotionPropertyValue(item.Spicy),
-        Gluten_Free: getNotionPropertyValue(item.Gluten_Free),
-        Vegan: getNotionPropertyValue(item.Vegan),
+        Photo: getNotionPropertyValue(item.Photo),
+        Spicy: getNotionPropertyValue(item.Spicy) ?? false,
+        Gluten_Free: getNotionPropertyValue(item.Gluten_Free) ?? false,
+        Vegan: getNotionPropertyValue(item.Vegan) ?? false,
       };
     });
 
-    const parseMainInfo = mainBranchesProperties.map((item) => {
+    const parseMainBranchInfo = mainBranchesProperties.map((item) => {
       return {
-        Name: getNotionPropertyValue(item.Name),
+        Name:
+          getNotionPropertyValue(item.Name) ??
+          ERROR_MESSAGES.en.MESSAGES.ASK_FOR_DETAILS,
         Home_Menu_Description: getNotionPropertyValue(
           item.Home_Menu_Description
         ),
@@ -164,10 +165,90 @@ export async function GET(req: NextRequest, res: NextResponse) {
       };
     });
 
+    const parseSubBranchesInfo = SubBranchesProperties.map((item) => {
+      return {
+        Name:
+          getNotionPropertyValue(item.Name) ??
+          ERROR_MESSAGES.en.MESSAGES.ASK_FOR_DETAILS,
+        Restaurant_Photo: getNotionPropertyValue(item.Restaurant_Photo),
+        Address: getNotionPropertyValue(item.Address),
+        Monday_Opening_Time: Number(
+          getNotionPropertyValue(item.Monday_Opening_Time)
+        ),
+        Monday_Opening_AM_PM: getNotionPropertyValue(item.Monday_Opening_AM_PM),
+        Monday_Closed_Time: Number(
+          getNotionPropertyValue(item.Monday_Closed_Time)
+        ),
+        Monday_closed_AM_PM: getNotionPropertyValue(item.Monday_Closed_AM_PM),
+        Tuesday_Opening_Time: Number(
+          getNotionPropertyValue(item.Tuesday_Opening_Time)
+        ),
+        Tuesday_Opening_AM_PM: getNotionPropertyValue(
+          item.Tuesday_Opening_AM_PM
+        ),
+        Tuesday_Closed_Time: Number(
+          getNotionPropertyValue(item.Tuesday_Closed_Time)
+        ),
+        Tuesday_Closed_AM_PM: getNotionPropertyValue(item.Tuesday_Closed_AM_PM),
+        Wednesday_Opening_Time: Number(
+          getNotionPropertyValue(item.Wednesday_Opening_Time)
+        ),
+        Wednesday_Opening_AM_PM: getNotionPropertyValue(
+          item.Wednesday_Opening_AM_PM
+        ),
+        Wednesday_Closed_Time: Number(
+          getNotionPropertyValue(item.Wednesday_Closed_Time)
+        ),
+        Wednesday_Closed_AM_PM: getNotionPropertyValue(
+          item.Wednesday_Closed_AM_PM
+        ),
+        Thursday_Opening_Time: Number(
+          getNotionPropertyValue(item.Thursday_Opening_Time)
+        ),
+        Thursday_Opening_AM_PM: getNotionPropertyValue(
+          item.Thursday_Opening_AM_PM
+        ),
+        Thursday_Closed_Time: Number(
+          getNotionPropertyValue(item.Thursday_Closed_Time)
+        ),
+        Thursday_Closed_AM_PM: getNotionPropertyValue(
+          item.Thursday_Closed_AM_PM
+        ),
+        Friday_Opening_Time: getNotionPropertyValue(item.Friday_Opening_Time),
+        Friday_Opening_AM_PM: getNotionPropertyValue(item.Friday_Opening_AM_PM),
+        Friday_Closed_Time: Number(
+          getNotionPropertyValue(item.Friday_Closed_Time)
+        ),
+        Friday_Closed_AM_PM: getNotionPropertyValue(item.Friday_Closed_AM_PM),
+        Saturday_Opening_Time: Number(
+          getNotionPropertyValue(item.Saturday_Opening_Time)
+        ),
+        Saturday_Opening_AM_PM: getNotionPropertyValue(
+          item.Saturday_Opening_AM_PM
+        ),
+        Saturday_Closed_Time: Number(
+          getNotionPropertyValue(item.Saturday_Closed_Time)
+        ),
+        Saturday_Closed_AM_PM: getNotionPropertyValue(
+          item.Saturday_Closed_AM_PM
+        ),
+        Sunday_Opening_Time: Number(
+          getNotionPropertyValue(item.Sunday_Opening_Time)
+        ),
+        Sunday_Opening_AM_PM: getNotionPropertyValue(item.Sunday_Opening_AM_PM),
+        Sunday_Closed_Time: Number(
+          getNotionPropertyValue(item.Sunday_Closed_Time)
+        ),
+        Sunday_Closed_AM_PM: getNotionPropertyValue(item.Sunday_Closed_AM_PM),
+        Phone: getNotionPropertyValue(item.Phone),
+        Email: getNotionPropertyValue(item.Email),
+      };
+    });
+
     return NextResponse.json({
       Menu_Items: parseMenuItems,
-      Main_Branch_Info: parseMainInfo,
-      Sub_Branches_Info: "",
+      Main_Branch_Info: parseMainBranchInfo,
+      Sub_Branches_Info: parseSubBranchesInfo,
     });
   } catch (error) {
     console.error(error);

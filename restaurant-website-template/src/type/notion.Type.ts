@@ -179,89 +179,98 @@ export interface MenuItemsProperties {
  * Main_Branch_Info データベースのプロパティ一覧
  */
 export interface MainBranchProperties {
+  // 基本情報
+  Name: NotionTitleProperty;
+  Address: NotionRichTextProperty;
+  Phone: NotionPhoneNumberProperty;
   Email: NotionEmailProperty;
-  Friday_Closed_Time: NotionNumberProperty;
-  Sunday_Opening_AM_PM: NotionSelectProperty;
-  PDF_Menu: NotionFilesProperty;
-  Saturday_Opening_Time: NotionNumberProperty;
-  Tuesday_Opening_AM_PM: NotionSelectProperty;
-  Thursday_Closed_AM_PM: NotionSelectProperty;
-  Friday_Opening_Time: NotionNumberProperty;
+
+  // 営業時間
+  Monday_Opening_Time: NotionNumberProperty;
+  Monday_Closed_Time: NotionNumberProperty;
   Monday_Opening_AM_PM: NotionSelectProperty;
   Monday_Closed_AM_PM: NotionSelectProperty;
-  Saturday_Opening_AM_PM: NotionSelectProperty;
-  Friday_Opening_AM_PM: NotionSelectProperty;
-  Restaurant_Photo: NotionFilesProperty;
-  Monday_Opening_Time: NotionNumberProperty;
-  Wednesday_Closed_AM_PM: NotionSelectProperty;
-  Sunday_Closed_AM_PM: NotionSelectProperty;
-  Thursday_Opening_AM_PM: NotionSelectProperty;
-  Home_Menu_Description: NotionRichTextProperty;
-  Tuesday_Closed_Time: NotionNumberProperty;
-  Logo: NotionFilesProperty;
-  Phone: NotionPhoneNumberProperty;
-  FaceBook: NotionUrlProperty;
-  Wednesday_Closed_Time: NotionNumberProperty;
-  Sunday_Opening_Time: NotionNumberProperty;
-  Home_Menu_Photo1: NotionFilesProperty;
-  Thursday_Closed_Time: NotionNumberProperty;
-  Saturday_Closed_AM_PM: NotionSelectProperty;
-  Wednesday_Opening_Time: NotionNumberProperty;
-  Saturday_Closed_Time: NotionNumberProperty;
-  Home_Menu_Photo3: NotionFilesProperty;
-  Home_Menu_Photo2: NotionFilesProperty;
-  Monday_Closed_Time: NotionNumberProperty;
-  Instagram: NotionUrlProperty;
-  Friday_Closed_AM_PM: NotionSelectProperty;
-  Address: NotionRichTextProperty;
-  Wednesday_Opening_AM_PM: NotionSelectProperty;
-  Thursday_Opening_Time: NotionNumberProperty;
-  Sunday_Closed_Time: NotionNumberProperty;
   Tuesday_Opening_Time: NotionNumberProperty;
+  Tuesday_Closed_Time: NotionNumberProperty;
+  Tuesday_Opening_AM_PM: NotionSelectProperty;
   Tuesday_Closed_AM_PM: NotionSelectProperty;
-  Name: NotionTitleProperty;
+  Wednesday_Opening_Time: NotionNumberProperty;
+  Wednesday_Closed_Time: NotionNumberProperty;
+  Wednesday_Opening_AM_PM: NotionSelectProperty;
+  Wednesday_Closed_AM_PM: NotionSelectProperty;
+  Thursday_Opening_Time: NotionNumberProperty;
+  Thursday_Closed_Time: NotionNumberProperty;
+  Thursday_Opening_AM_PM: NotionSelectProperty;
+  Thursday_Closed_AM_PM: NotionSelectProperty;
+  Friday_Opening_Time: NotionNumberProperty;
+  Friday_Closed_Time: NotionNumberProperty;
+  Friday_Opening_AM_PM: NotionSelectProperty;
+  Friday_Closed_AM_PM: NotionSelectProperty;
+  Saturday_Opening_Time: NotionNumberProperty;
+  Saturday_Closed_Time: NotionNumberProperty;
+  Saturday_Opening_AM_PM: NotionSelectProperty;
+  Saturday_Closed_AM_PM: NotionSelectProperty;
+  Sunday_Opening_Time: NotionNumberProperty;
+  Sunday_Closed_Time: NotionNumberProperty;
+  Sunday_Opening_AM_PM: NotionSelectProperty;
+  Sunday_Closed_AM_PM: NotionSelectProperty;
+
+  // メニュー
+  Home_Menu_Description: NotionRichTextProperty;
+  Home_Menu_Photo1: NotionFilesProperty;
+  Home_Menu_Photo2: NotionFilesProperty;
+  Home_Menu_Photo3: NotionFilesProperty;
+  PDF_Menu: NotionFilesProperty;
+
+  // ソーシャルメディア・ロゴ
+  Logo: NotionFilesProperty;
+  FaceBook: NotionUrlProperty;
+  Instagram: NotionUrlProperty;
+
+  // その他
+  Restaurant_Photo: NotionFilesProperty;
 }
 
 /**
  * Sub_Branches_Info データベースのプロパティ一覧
  */
 export interface SubBranchesProperties {
+  // 基本情報
+  Name: NotionTitleProperty;
+  Address: NotionRichTextProperty;
+  Phone: NotionPhoneNumberProperty;
   Email: NotionEmailProperty;
-  Friday_Closed_Time: NotionNumberProperty;
-  Sunday_Opening_AM_PM: NotionSelectProperty;
-  PDF_Menu: NotionFilesProperty;
-  Saturday_Opening_Time: NotionNumberProperty;
-  Tuesday_Opening_AM_PM: NotionSelectProperty;
-  Thursday_Closed_AM_PM: NotionSelectProperty;
-  Friday_Opening_Time: NotionNumberProperty;
+
+  // 営業時間
+  Monday_Opening_Time: NotionNumberProperty;
+  Monday_Closed_Time: NotionNumberProperty;
   Monday_Opening_AM_PM: NotionSelectProperty;
   Monday_Closed_AM_PM: NotionSelectProperty;
-  Saturday_Opening_AM_PM: NotionSelectProperty;
-  Friday_Opening_AM_PM: NotionSelectProperty;
-  Restaurant_Photo: NotionFilesProperty;
-  Monday_Opening_Time: NotionNumberProperty;
-  Wednesday_Closed_AM_PM: NotionSelectProperty;
-  Sunday_Closed_AM_PM: NotionSelectProperty;
-  Thursday_Opening_AM_PM: NotionSelectProperty;
-  Home_Menu_Description: NotionRichTextProperty;
-  Tuesday_Closed_Time: NotionNumberProperty;
-  Phone: NotionPhoneNumberProperty;
-  Wednesday_Closed_Time: NotionNumberProperty;
-  Sunday_Opening_Time: NotionNumberProperty;
-  Home_Menu_Photo1: NotionFilesProperty;
-  Thursday_Closed_Time: NotionNumberProperty;
-  Saturday_Closed_AM_PM: NotionSelectProperty;
-  Wednesday_Opening_Time: NotionNumberProperty;
-  Saturday_Closed_Time: NotionNumberProperty;
-  Home_Menu_Photo3: NotionFilesProperty;
-  Home_Menu_Photo2: NotionFilesProperty;
-  Monday_Closed_Time: NotionNumberProperty;
-  Friday_Closed_AM_PM: NotionSelectProperty;
-  Address: NotionRichTextProperty;
-  Wednesday_Opening_AM_PM: NotionSelectProperty;
-  Thursday_Opening_Time: NotionNumberProperty;
-  Sunday_Closed_Time: NotionNumberProperty;
   Tuesday_Opening_Time: NotionNumberProperty;
+  Tuesday_Closed_Time: NotionNumberProperty;
+  Tuesday_Opening_AM_PM: NotionSelectProperty;
   Tuesday_Closed_AM_PM: NotionSelectProperty;
-  Name: NotionTitleProperty;
+  Wednesday_Opening_Time: NotionNumberProperty;
+  Wednesday_Closed_Time: NotionNumberProperty;
+  Wednesday_Opening_AM_PM: NotionSelectProperty;
+  Wednesday_Closed_AM_PM: NotionSelectProperty;
+  Thursday_Opening_Time: NotionNumberProperty;
+  Thursday_Closed_Time: NotionNumberProperty;
+  Thursday_Opening_AM_PM: NotionSelectProperty;
+  Thursday_Closed_AM_PM: NotionSelectProperty;
+  Friday_Opening_Time: NotionNumberProperty;
+  Friday_Closed_Time: NotionNumberProperty;
+  Friday_Opening_AM_PM: NotionSelectProperty;
+  Friday_Closed_AM_PM: NotionSelectProperty;
+  Saturday_Opening_Time: NotionNumberProperty;
+  Saturday_Closed_Time: NotionNumberProperty;
+  Saturday_Opening_AM_PM: NotionSelectProperty;
+  Saturday_Closed_AM_PM: NotionSelectProperty;
+  Sunday_Opening_Time: NotionNumberProperty;
+  Sunday_Closed_Time: NotionNumberProperty;
+  Sunday_Opening_AM_PM: NotionSelectProperty;
+  Sunday_Closed_AM_PM: NotionSelectProperty;
+
+  // その他
+  Restaurant_Photo: NotionFilesProperty;
 }
