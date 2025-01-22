@@ -19,6 +19,8 @@ body {
     --secondary-background: 0, 0%, 20%; /* #333333 */ /* フッターの色 */
     --foreground: 0, 0%, 92%; /* #EBEBEB */ /* 基本のテキスト色 */
     --secondary-foreground: 0, 0%, 14%; /* #232323 */ /* ボタンのテキスト色 */
+    --sidebar-background: 0, 0%, 20%; /* #333333 */
+    --sidebar-foreground: 0, 0%, 92%; /* #EBEBEB */
 
     /*** 必要無くなった時に削除する ***/
     --card: 0 0% 100%;
@@ -41,8 +43,6 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
