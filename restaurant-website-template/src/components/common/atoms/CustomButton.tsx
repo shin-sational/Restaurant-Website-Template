@@ -10,6 +10,7 @@ const customButtonVariants = cva(
     variants: {
       variant: {
         default: "bg-accent text-buttonText shadow hover:bg-accent/90",
+        outline: "bg-background text-foreground shadow hover:bg-background/90",
       },
       size: {
         default: "h-[48px] px-4 py-2",
