@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/Sidebar/AppSidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,9 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <main>{children}</main>
-        {/* Footerを配置 */}
+        <SidebarProvider>
+          {/* サイドバーをモバイル版のみ出現 */}
+          <div className="md:hidden">
+            <AppSidebar />
+          </div>
+
+          <div className="w-full min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            {/* Footerを配置 */}
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );
