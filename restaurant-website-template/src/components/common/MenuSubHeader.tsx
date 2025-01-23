@@ -9,7 +9,7 @@ const MenuSubHeader = () => {
         <ul className="flex items-center justify-center gap-[16px] md:gap-[40px] min-w-max px-[16px] md:px-[10px] py-[24px]">
           {MENU_CATEGORIES.map((category) => (
             <li className="text-[16px] whitespace-nowrap" key={category.label}>
-              <Link href={category.mainId}>{category.label}</Link>
+              <Link href={category.menuId}>{category.label}</Link>
             </li>
           ))}
         </ul>
