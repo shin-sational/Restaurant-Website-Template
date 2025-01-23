@@ -12,10 +12,10 @@ export const navigationLinks = {
 };
 
 export const MENU_CATEGORIES = [
-  { label: "APPETIZER", mainId: "#appetizer" },
-  { label: "MAIN", mainId: "#main" },
-  { label: "VEGGIES", mainId: "#veggies" },
-  { label: "SIDE DISH", mainId: "#sideDish" },
-  { label: "DRINK", mainId: "#drink" },
-  { label: "DESSERT", mainId: "#dessert" },
+  { label: "APPETIZER", menuId: "#appetizer" },
+  { label: "MAIN", menuId: "#main" },
+  { label: "VEGGIES", menuId: "#veggies" },
+  { label: "SIDE DISH", menuId: "#sideDish" },
+  { label: "DRINK", menuId: "#drink" },
+  { label: "DESSERT", menuId: "#dessert" },
 ];
