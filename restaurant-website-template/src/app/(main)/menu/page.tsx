@@ -1,6 +1,8 @@
+import fetchPropertyData from "@/lib/fetchPropertyData";
 import React from "react";
 
-const Menu = () => {
+const Menu = async () => {
+  const restaurantData = await fetchPropertyData();
   return <div>menu</div>;
 };
 
