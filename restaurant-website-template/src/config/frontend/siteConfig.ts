@@ -19,3 +19,16 @@ export const MENU_CATEGORIES = [
   { label: "DRINK", mainId: "#drink" },
   { label: "DESSERT", mainId: "#dessert" },
 ];
+
+export const OPENING_HOURS = [
+  { day: "Monday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+  { day: "Tuesday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+  { day: "Wednesday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+  { day: "Thursday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+  { day: "Friday", opentime: "9", openPeriod: "AM", closetime: "8", closePeriod: "PM" },
+  { day: "Saturday", opentime: "10", openPeriod: "AM", closetime: "8", closePeriod: "PM" },
+  { day: "Sunday", opentime: "10", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+];
+
+
+
