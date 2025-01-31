@@ -8,7 +8,7 @@ interface Props {
 }
 const MenuSubHeader: FC<Props> = ({ groupedMenuItems }) => {
   return (
-    <nav className="sticky top-0 bg-background/50 bg-opacity-10 w-full h-[80px] z-10">
+    <nav className="sticky top-[64px] bg-background/50 bg-opacity-10 w-full h-[80px] z-10">
       <div className="overflow-x-auto scrollbar-hide h-full">
         <ul className="flex items-center justify-center gap-[16px] md:gap-[40px] min-w-max px-[16px] md:px-[10px] py-[24px] font-bold">
           {Object.entries(groupedMenuItems).map(([category]) => (

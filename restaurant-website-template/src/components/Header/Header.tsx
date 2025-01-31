@@ -18,7 +18,7 @@ const Header: FC<HeaderProps> = ({ instagramLink, facebookLink }) => {
   const pathname = usePathname();
 
   return (
-    <header className="w-full h-[64px] bg-background">
+    <header className="sticky top-0 w-full h-[64px] bg-background z-40">
       {/* モバイル版 */}
       <nav className="block md:hidden">
         <div className="container mx-auto h-full flex items-center justify-between py-4 px-6">
