@@ -17,7 +17,7 @@ interface Props {
 const ImageCarousel: FC<Props> = ({ restaurantData }) => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-">
+    <div className="flex flex-col items-center justify-center w-full">
       <Carousel
         plugins={[plugin.current]}
         opts={{ align: "start", loop: true }}
@@ -26,25 +26,28 @@ const ImageCarousel: FC<Props> = ({ restaurantData }) => {
         className="w-4/5"
       >
         <CarouselContent>
-          <CarouselItem className=" md:basis-1/3">
+          <CarouselItem className="md:basis-1/3">
             <CustomImage
               src={restaurantData.Main_Branch_Info[0].Home_Menu_Photo1}
               alt="menu photo 1"
               ratio="5/4"
+              containerClassName="max-w-[400px]"
             />
           </CarouselItem>
-          <CarouselItem className=" md:basis-1/3">
+          <CarouselItem className="md:basis-1/3">
             <CustomImage
               src={restaurantData.Main_Branch_Info[0].Home_Menu_Photo2}
               alt="menu photo 2"
               ratio="5/4"
+              containerClassName="max-w-[400px]"
             />
           </CarouselItem>
-          <CarouselItem className=" md:basis-1/3">
+          <CarouselItem className="md:basis-1/3">
             <CustomImage
               src={restaurantData.Main_Branch_Info[0].Home_Menu_Photo3}
               alt="menu photo 3"
               ratio="5/4"
+              containerClassName="max-w-[400px]"
             />
           </CarouselItem>
         </CarouselContent>

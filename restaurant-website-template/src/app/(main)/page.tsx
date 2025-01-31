@@ -19,11 +19,11 @@ const Home = async () => {
       />
 
       {/* Our Menu */}
-      <div className="flex flex-col items-center justify-center px-[16px] py-[40px] gap-[24px]">
+      <div className="flex flex-col items-center justify-center px-[16px] md:px-[70px] py-[40px] md:py-[80px] gap-[24px] md:gap-[70px]">
         {/* タイトルと説明 */}
         <div className="flex flex-col items-center justify-center gap-[16px]">
           <CustomSectionTitle>Our Menu</CustomSectionTitle>
-          <p className="text-[16px]">
+          <p className="text-[16px] md:text-[18px]">
             {restaurantData.Main_Branch_Info[0].Home_Menu_Description}
           </p>
         </div>
