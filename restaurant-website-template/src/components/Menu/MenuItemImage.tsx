@@ -8,7 +8,7 @@ interface Props {
   menuItem: MenuItem;
 }
 const MenuItemImage: FC<Props> = ({ menuItem }) => {
-  const [isImageVisible, setIsImageVisible] = useState(false);
+  const [isImageVisible, setIsImageVisible] = useState(true);
   const allergyIcons = [
     { condition: menuItem.Spicy, src: "/allergy/Spicy.png", alt: "spicy" },
     {
@@ -19,7 +19,7 @@ const MenuItemImage: FC<Props> = ({ menuItem }) => {
     { condition: menuItem.Vegan, src: "/allergy/Vegan.png", alt: "vegan" },
   ];
   return (
-    <div>
+    <div className="flex flex-col gap-[12px]">
       {isImageVisible && (
         // 画像
         <CustomImage
