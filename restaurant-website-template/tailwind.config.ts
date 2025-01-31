@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         background: "hsla(var(--background),1)",
+        secondaryBackground: "hsla(var(--secondary-background),1)",
         foreground: "hsla(var(--foreground),1)",
         h1: "hsla(var(--foreground),1)", // 大見出し ex)Japanese Restaurant
         h2: "hsla(var(--accent),1)", // 中見出し Appetizer
