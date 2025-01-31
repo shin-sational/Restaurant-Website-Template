@@ -14,6 +14,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
  * - Hoursを追加する
  * - Headerとクラスを統一できる場合は、utilityクラスを作って適用する
  * - レスポンシブ対応(モバイルのみ作成)
+ * - logoがない時のハンドリング対応
  */
 
 interface Props {
