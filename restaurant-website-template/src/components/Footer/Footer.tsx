@@ -22,18 +22,22 @@ interface Props {
 }
 const Footer: FC<Props> = ({ restaurantData }) => {
   const pathname = usePathname();
+  const logo = restaurantData.Main_Branch_Info[0].Logo || null;
   const instagramLink = restaurantData.Main_Branch_Info[0].Instagram || null;
   const facebookLink = restaurantData.Main_Branch_Info[0].Facebook || null;
   return (
-    <footer className="w-full bg-secondaryBackground px-[20px] py-[40px]">
+    <footer className="w-full bg-secondaryBackground px-[20px] md:px-[70px] py-[40px] md:py-[60px]">
+      {/* モバイル版 */}
       <div className="w-full flex flex-col items-center gap-[38px]">
         {/* LOGO */}
-        <CustomImage
-          src={restaurantData.Main_Branch_Info[0].Logo}
-          alt="restaurant logo"
-          ratio="16/9"
-          containerClassName="w-[84px]"
-        />
+        {logo && (
+          <CustomImage
+            src={logo}
+            alt="restaurant logo"
+            ratio="16/9"
+            containerClassName="w-[84px]"
+          />
+        )}
 
         {/* メニュー */}
         <ul className="flex flex-col items-center gap-[12px]">
