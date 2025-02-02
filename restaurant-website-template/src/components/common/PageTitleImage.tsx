@@ -4,6 +4,7 @@ import CustomPageTitle from "./atoms/CustomPageTitle";
 import { CustomButton } from "./atoms/CustomButton";
 import Link from "next/link";
 import CustomExternalLink from "./atoms/CustomExternalLink";
+import Image from "next/image";
 
 interface Props {
   backgroundImageSrc: string;
@@ -53,17 +54,19 @@ const PageTitleImage: FC<Props> = ({
     }
   };
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-[280px]">
       {/* 背景写真 */}
-      <CustomImage
+      {/* アスペクト比を使うコンポーネントだと、維持するための無駄な縦幅が確保されてしまうため、Imageを採用 */}
+      <Image
         src={backgroundImageSrc}
         alt={currentAlt(type)}
-        ratio="5/4"
-        containerClassName="max-h-[280px] rounded-none"
-        className="brightness-50 max-h-[280px] rounded-none"
+        fill
+        unoptimized={true}
+        className="brightness-50 rounded-none object-cover"
       />
+
       {/* オーバーレイ部分 */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 h-[280px]">
         <div className="flex flex-col items-center justify-center h-full gap-[20px]">
           <CustomPageTitle>{currentPageTitle(type)}</CustomPageTitle>
 
