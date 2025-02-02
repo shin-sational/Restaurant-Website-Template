@@ -59,8 +59,8 @@ const PageTitleImage: FC<Props> = ({
         src={backgroundImageSrc}
         alt={currentAlt(type)}
         ratio="5/4"
-        containerClassName="max-h-[280px]"
-        className="brightness-50 max-h-[280px]"
+        containerClassName="max-h-[280px] rounded-none"
+        className="brightness-50 max-h-[280px] rounded-none"
       />
       {/* オーバーレイ部分 */}
       <div className="absolute inset-0">
