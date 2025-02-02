@@ -10,7 +10,7 @@ const Contact = async () => {
     <section>
       {/* ページタイトル */}
       <PageTitleImage
-        backgroundImageSrc={restaurantData.Main_Branch_Info[0].Home_Menu_Photo1}
+        backgroundImageSrc={restaurantData.Main_Branch_Info[0].Home_Menu_Photo3}
         type="contact"
       />
 

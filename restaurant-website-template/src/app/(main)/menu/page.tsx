@@ -18,7 +18,7 @@ const Menu = async () => {
     <section>
       {/* ページタイトル */}
       <PageTitleImage
-        backgroundImageSrc={restaurantData.Main_Branch_Info[0].Home_Menu_Photo1}
+        backgroundImageSrc={restaurantData.Main_Branch_Info[0].Home_Menu_Photo2}
         type="menu"
         pdfLink={restaurantData.Main_Branch_Info[0].PDF_Menu}
       />

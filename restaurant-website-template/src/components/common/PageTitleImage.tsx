@@ -56,7 +56,7 @@ const PageTitleImage: FC<Props> = ({
   return (
     <div className="relative w-full h-[280px]">
       {/* 背景写真 */}
-      {/* アスペクト比を使うコンポーネントだと、維持するための無駄な縦幅が確保されてしまうため、Imageを採用 */}
+      {/* アスペクト比を維持するコンポーネントを使用すると、不必要な縦幅が確保されてしまうため、Image を採用 */}
       <Image
         src={backgroundImageSrc}
         alt={currentAlt(type)}
