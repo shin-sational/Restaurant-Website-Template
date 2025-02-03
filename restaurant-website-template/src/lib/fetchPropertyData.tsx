@@ -12,8 +12,15 @@ async function fetchPropertyData(): Promise<RestaurantData> {
     });
 
     if (!response.ok) {
+      const errorMessage = await response.text(); // 追加: サーバーからのレスポンス内容を取得
+      console.error(
+        "Fetch failed:",
+        response.status,
+        response.statusText,
+        errorMessage
+      );
       throw new Error(
-        ERROR_MESSAGES.en.FRONTEND.UI.LOADING_FAILED(response.statusText)
+        ERROR_MESSAGES.en.FRONTEND.UI.LOADING_FAILED("restaurant data")
       );
     }
 
