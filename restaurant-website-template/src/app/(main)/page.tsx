@@ -5,9 +5,11 @@ import React from "react";
 import ImageCarousel from "@/components/Home/ImageCarousel";
 import { CustomButton } from "@/components/common/atoms/CustomButton";
 import Link from "next/link";
+import ContactDetails from "@/components/common/ContactDetails";
 
 const Home = async () => {
   const restaurantData = await fetchPropertyData();
+  console.log("restaurantData: ", restaurantData);
 
   return (
     <section>
@@ -35,6 +37,9 @@ const Home = async () => {
           <Link href="/menu">View the Menu</Link>
         </CustomButton>
       </div>
+
+      {/* location */}
+      <ContactDetails restaurantData={restaurantData} />
     </section>
   );
 };
