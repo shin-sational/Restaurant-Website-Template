@@ -1,25 +1,14 @@
-<<<<<<< HEAD
 import ContactDetails from "@/components/common/ContactDetails";
-=======
 import CustomSectionTitle from "@/components/common/atoms/CustomSectionTitle";
 import MenuSubHeader from "@/components/common/MenuSubHeader";
 import PageTitleImage from "@/components/common/PageTitleImage";
 import MenuItemCard from "@/components/Menu/MenuCard";
->>>>>>> main
 import fetchPropertyData from "@/lib/fetchPropertyData";
 import { groupMenuItemsByCategory } from "@/utils/groupMenuItem";
 import React from "react";
 
 const Menu = async () => {
   const restaurantData = await fetchPropertyData();
-<<<<<<< HEAD
-  console.log("restaurantData: ", restaurantData);
-
-  return (
-    <div>
-      <ContactDetails restaurantData={restaurantData} />
-    </div>
-=======
 
   const groupedMenuItems = groupMenuItemsByCategory(restaurantData);
 
@@ -54,7 +43,6 @@ const Menu = async () => {
         </div>
       ))}
     </section>
->>>>>>> main
   );
 };
 
