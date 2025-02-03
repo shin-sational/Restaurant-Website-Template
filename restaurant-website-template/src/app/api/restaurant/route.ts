@@ -27,11 +27,15 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     if (
-      typeof MENU_ITEMS_DATABASE_ID === "undefined" ||
-      typeof MAIN_BRANCH_INFO_DATABASE_ID === "undefined" ||
-      typeof SUB_BRANCHES_INFO_DATABASE_ID === "undefined"
+      !MENU_ITEMS_DATABASE_ID ||
+      !MAIN_BRANCH_INFO_DATABASE_ID ||
+      !SUB_BRANCHES_INFO_DATABASE_ID
     ) {
-      console.log("No database id found");
+      console.log("Database ID is missing:", {
+        MAIN_BRANCH_INFO_DATABASE_ID,
+        MENU_ITEMS_DATABASE_ID,
+        SUB_BRANCHES_INFO_DATABASE_ID,
+      });
       return NextResponse.json(
         { error: ERROR_MESSAGES.en.BACKEND.DATABASE.NO_DATABASE_ID },
         { status: 500 }
