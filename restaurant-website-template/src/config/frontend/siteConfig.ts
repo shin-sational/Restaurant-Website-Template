@@ -1,3 +1,4 @@
+
 export const navigationLinks = {
   header: [
     { label: "Home", href: "/" },
@@ -19,3 +20,8 @@ export const MENU_CATEGORIES = [
   { label: "DRINK", menuId: "#drink" },
   { label: "DESSERT", menuId: "#dessert" },
 ];
+
+export const BRANCH_INFORMATION = [
+  {name: "Robson Street", image: "#", adress: "xxx", phoneNumber: "000-000-000", email:"xxx@gmail.com"},
+  {name: "Main Street", image: "#", adress: "xxx", phoneNumber: "000-000-000", email:"xxx@gmail.com"}
+]
