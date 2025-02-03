@@ -11,6 +11,8 @@ async function fetchPropertyData(): Promise<RestaurantData> {
       },
     });
 
+    console.log(NEXT_PUBLIC_BASE_URL);
+
     if (!response.ok) {
       throw new Error(
         ERROR_MESSAGES.en.FRONTEND.UI.LOADING_FAILED("restaurant data")
