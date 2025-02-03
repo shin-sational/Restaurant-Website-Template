@@ -1,4 +1,3 @@
-import ContactDetails from "@/components/common/ContactDetails";
 import CustomSectionTitle from "@/components/common/atoms/CustomSectionTitle";
 import MenuSubHeader from "@/components/common/MenuSubHeader";
 import PageTitleImage from "@/components/common/PageTitleImage";
