@@ -31,21 +31,24 @@ export async function GET(req: NextRequest, res: NextResponse) {
       !MAIN_BRANCH_INFO_DATABASE_ID ||
       !SUB_BRANCHES_INFO_DATABASE_ID
     ) {
-      console.log("Database ID is missing:", {
-        MAIN_BRANCH_INFO_DATABASE_ID,
+      console.error("Database ID is missing:", {
         MENU_ITEMS_DATABASE_ID,
+        MAIN_BRANCH_INFO_DATABASE_ID,
         SUB_BRANCHES_INFO_DATABASE_ID,
       });
-      return NextResponse.json(
-        {
-          error: {
-            MENU_ITEMS_DATABASE_ID,
-            MAIN_BRANCH_INFO_DATABASE_ID,
-            SUB_BRANCHES_INFO_DATABASE_ID,
-          },
+
+      // もし値が falsy であれば「Not provided」として出力する例
+      const errorResponse = {
+        error: {
+          MENU_ITEMS_DATABASE_ID: MENU_ITEMS_DATABASE_ID || "Not provided",
+          MAIN_BRANCH_INFO_DATABASE_ID:
+            MAIN_BRANCH_INFO_DATABASE_ID || "Not provided",
+          SUB_BRANCHES_INFO_DATABASE_ID:
+            SUB_BRANCHES_INFO_DATABASE_ID || "Not provided",
         },
-        { status: 500 }
-      );
+      };
+
+      return NextResponse.json(errorResponse, { status: 500 });
     }
 
     const [allMenuItems, allMainBranches, allSubBranches] = await Promise.all([
