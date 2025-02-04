@@ -28,7 +28,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const restaurantData = await fetchPropertyData();
+  // const restaurantData = await fetchPropertyData();
   return (
     <html lang="en">
       <body
@@ -43,7 +43,7 @@ export default async function RootLayout({
           <div className="w-full min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">{children}</main>
-            <Footer restaurantData={restaurantData} />
+            {/* <Footer restaurantData={restaurantData} /> */}
           </div>
         </SidebarProvider>
       </body>
