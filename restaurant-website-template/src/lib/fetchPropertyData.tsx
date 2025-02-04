@@ -4,15 +4,12 @@ import { RestaurantData } from "@/type/notionFrontend.Type";
 
 async function fetchPropertyData(): Promise<RestaurantData> {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/restaurant`,
-      {
-        next: { revalidate: 3600 }, // 1時間キャッシュ
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${NEXT_PUBLIC_BASE_URL}/api/restaurant`, {
+      next: { revalidate: 3600 }, // 1時間キャッシュ
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       const errorMessage = await response.text(); // 追加: サーバーからのレスポンス内容を取得
