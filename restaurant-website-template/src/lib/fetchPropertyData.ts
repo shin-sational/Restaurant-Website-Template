@@ -18,7 +18,9 @@ async function fetchPropertyData(): Promise<RestaurantData> {
         response.status,
         response.statusText,
         errorMessage,
-        response
+        process.env.SUB_BRANCHES_INFO_DATABASE_ID,
+        process.env.MAIN_BRANCH_INFO_DATABASE_ID,
+        process.env.MENU_ITEMS_DATABASE_ID
       );
       throw new Error(
         ERROR_MESSAGES.en.FRONTEND.UI.LOADING_FAILED("restaurant data")
