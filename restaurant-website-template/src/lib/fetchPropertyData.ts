@@ -17,7 +17,8 @@ async function fetchPropertyData(): Promise<RestaurantData> {
         "Fetch failed:",
         response.status,
         response.statusText,
-        errorMessage
+        errorMessage,
+        response
       );
       throw new Error(
         ERROR_MESSAGES.en.FRONTEND.UI.LOADING_FAILED("restaurant data")
