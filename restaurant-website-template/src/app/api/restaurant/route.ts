@@ -26,26 +26,26 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    if (
-      !MENU_ITEMS_DATABASE_ID ||
-      !MAIN_BRANCH_INFO_DATABASE_ID ||
-      !SUB_BRANCHES_INFO_DATABASE_ID
-    ) {
-      console.log("Database ID is missing:", {
-        MAIN_BRANCH_INFO_DATABASE_ID,
-        MENU_ITEMS_DATABASE_ID,
-        SUB_BRANCHES_INFO_DATABASE_ID,
-      });
-      return NextResponse.json(
-        { error: ERROR_MESSAGES.en.BACKEND.DATABASE.NO_DATABASE_ID },
-        { status: 500 }
-      );
-    }
+    // if (
+    //   !MENU_ITEMS_DATABASE_ID ||
+    //   !MAIN_BRANCH_INFO_DATABASE_ID ||
+    //   !SUB_BRANCHES_INFO_DATABASE_ID
+    // ) {
+    //   console.log("Database ID is missing:", {
+    //     MAIN_BRANCH_INFO_DATABASE_ID,
+    //     MENU_ITEMS_DATABASE_ID,
+    //     SUB_BRANCHES_INFO_DATABASE_ID,
+    //   });
+    //   return NextResponse.json(
+    //     { error: ERROR_MESSAGES.en.BACKEND.DATABASE.NO_DATABASE_ID },
+    //     { status: 500 }
+    //   );
+    // }
 
     const [allMenuItems, allMainBranches, allSubBranches] = await Promise.all([
-      await fetchAllItems(MENU_ITEMS_DATABASE_ID),
-      await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID),
-      await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID),
+      await fetchAllItems(MENU_ITEMS_DATABASE_ID!),
+      await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID!),
+      await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID!),
     ]);
 
     /**
