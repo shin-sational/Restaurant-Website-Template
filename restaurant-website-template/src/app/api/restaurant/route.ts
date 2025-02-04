@@ -56,6 +56,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
       await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID),
       await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID),
     ]);
+    if (!allMenuItems || !allMainBranches || !allSubBranches) {
+      return NextResponse.json(
+        { error: "Failed to fetch data from Notion" },
+        { status: 404 }
+      );
+    }
 
     /**
      * ジェネリクスを使ってページ配列から properties 部分のみを抽出するヘルパー関数
