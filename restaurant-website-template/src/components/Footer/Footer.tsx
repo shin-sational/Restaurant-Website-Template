@@ -1,8 +1,8 @@
 import React, { memo } from "react";
-import { LogoSection } from "./LogoSection";
-import { FooterNavigation } from "./FooterNavigation";
-import { SNSLinks } from "./SnsLinks";
-import DataFetcher from "../common/DataFetcher";
+import { LogoSection } from "../common/LogoSection";
+import { SNSLinks } from "@/components/common/SnsLinks";
+import DataFetcher from "@/components/common/DataFetcher";
+import NavigationList from "@/components/common/NavigationList";
 
 /**
  * TODO
@@ -26,7 +26,11 @@ const Footer = () => {
               {/* ロゴ */}
               <LogoSection logo={logo} containerClassName="max-w-[100px]" />
               {/* ナビゲーション */}
-              <FooterNavigation />
+              <NavigationList
+                ulClassName="flex flex-col items-center gap-[12px]"
+                liClassName="text-[16px] text-foreground/80"
+                activeClassName="text-foreground font-bold border-b-2 border-accent"
+              />
               {/* SNSリンク */}
               <SNSLinks
                 instagramLink={instagramLink}
@@ -46,7 +50,11 @@ const Footer = () => {
                 />
               </div>
               {/* ナビゲーション */}
-              <FooterNavigation />
+              <NavigationList
+                ulClassName="flex flex-col items-center gap-[12px]"
+                liClassName="text-[16px] text-foreground/80"
+                activeClassName="text-foreground font-bold border-b-2 border-accent"
+              />
               {/* 営業時間 */}
               <div>Hoursをここに入れてください</div>
             </div>
