@@ -1,15 +1,8 @@
-export const navigationLinks = {
-  header: [
-    { label: "Home", href: "/" },
-    { label: "Menu", href: "/menu" },
-    { label: "Contact", href: "/contact" },
-  ],
-  footer: [
-    { label: "Home", href: "/" },
-    { label: "Menu", href: "/menu" },
-    { label: "Contact", href: "/contact" },
-  ],
-};
+export const navigationLinks = [
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/menu" },
+  { label: "Contact", href: "/contact" },
+];
 
 export const MENU_CATEGORIES = [
   { label: "APPETIZER", menuId: "#appetizer" },

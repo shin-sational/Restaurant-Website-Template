@@ -27,15 +27,28 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     if (
-      typeof MENU_ITEMS_DATABASE_ID === "undefined" ||
-      typeof MAIN_BRANCH_INFO_DATABASE_ID === "undefined" ||
-      typeof SUB_BRANCHES_INFO_DATABASE_ID === "undefined"
+      !MENU_ITEMS_DATABASE_ID ||
+      !MAIN_BRANCH_INFO_DATABASE_ID ||
+      !SUB_BRANCHES_INFO_DATABASE_ID
     ) {
-      console.log("No database id found");
-      return NextResponse.json(
-        { error: ERROR_MESSAGES.en.BACKEND.DATABASE.NO_DATABASE_ID },
-        { status: 500 }
-      );
+      console.error("Database ID is missing:", {
+        MENU_ITEMS_DATABASE_ID,
+        MAIN_BRANCH_INFO_DATABASE_ID,
+        SUB_BRANCHES_INFO_DATABASE_ID,
+      });
+
+      // もし値が falsy であれば「Not provided」として出力する例
+      const errorResponse = {
+        error: {
+          MENU_ITEMS_DATABASE_ID: MENU_ITEMS_DATABASE_ID || "Not provided",
+          MAIN_BRANCH_INFO_DATABASE_ID:
+            MAIN_BRANCH_INFO_DATABASE_ID || "Not provided",
+          SUB_BRANCHES_INFO_DATABASE_ID:
+            SUB_BRANCHES_INFO_DATABASE_ID || "Not provided",
+        },
+      };
+
+      return NextResponse.json(errorResponse, { status: 500 });
     }
 
     const [allMenuItems, allMainBranches, allSubBranches] = await Promise.all([
@@ -43,6 +56,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
       await fetchAllItems(MAIN_BRANCH_INFO_DATABASE_ID),
       await fetchAllItems(SUB_BRANCHES_INFO_DATABASE_ID),
     ]);
+    if (!allMenuItems || !allMainBranches || !allSubBranches) {
+      return NextResponse.json(
+        { error: "Failed to fetch data from Notion" },
+        { status: 404 }
+      );
+    }
 
     /**
      * ジェネリクスを使ってページ配列から properties 部分のみを抽出するヘルパー関数

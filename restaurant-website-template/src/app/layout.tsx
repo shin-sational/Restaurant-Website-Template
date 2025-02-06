@@ -4,8 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/Sidebar/AppSidebar";
-import fetchPropertyData from "@/lib/fetchPropertyData";
+import { AppSidebar } from "@/components/Header/AppSidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +27,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const restaurantData = await fetchPropertyData();
   return (
     <html lang="en">
       <body
@@ -43,7 +41,7 @@ export default async function RootLayout({
           <div className="w-full min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">{children}</main>
-            <Footer restaurantData={restaurantData} />
+            <Footer />
           </div>
         </SidebarProvider>
       </body>

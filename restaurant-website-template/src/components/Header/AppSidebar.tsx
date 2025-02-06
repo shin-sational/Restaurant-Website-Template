@@ -47,7 +47,7 @@ export function AppSidebar({
           <SidebarGroupLabel>LOGO</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {navigationLinks.header.map((link) => (
+              {navigationLinks.map((link) => (
                 <SidebarMenuItem key={link.href}>
                   <SidebarMenuButton
                     asChild
