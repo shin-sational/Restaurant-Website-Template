@@ -1,4 +1,3 @@
-
 export const navigationLinks = {
   header: [
     { label: "Home", href: "/" },
@@ -21,22 +20,19 @@ export const MENU_CATEGORIES = [
   { label: "DESSERT", menuId: "#dessert" },
 ];
 
-<<<<<<< HEAD
 export const BRANCH_INFORMATION = [
-  {name: "Robson Street", image: "#", adress: "xxx", phoneNumber: "000-000-000", email:"xxx@gmail.com"},
-  {name: "Main Street", image: "#", adress: "xxx", phoneNumber: "000-000-000", email:"xxx@gmail.com"}
-]
-=======
-export const OPENING_HOURS = [
-  { day: "Monday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
-  { day: "Tuesday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
-  { day: "Wednesday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
-  { day: "Thursday", opentime: "9", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
-  { day: "Friday", opentime: "9", openPeriod: "AM", closetime: "8", closePeriod: "PM" },
-  { day: "Saturday", opentime: "10", openPeriod: "AM", closetime: "8", closePeriod: "PM" },
-  { day: "Sunday", opentime: "10", openPeriod: "AM", closetime: "6", closePeriod: "PM" },
+  {
+    name: "Robson Street",
+    image: "#",
+    adress: "xxx",
+    phoneNumber: "000-000-000",
+    email: "xxx@gmail.com",
+  },
+  {
+    name: "Main Street",
+    image: "#",
+    adress: "xxx",
+    phoneNumber: "000-000-000",
+    email: "xxx@gmail.com",
+  },
 ];
-
-
-
->>>>>>> main
