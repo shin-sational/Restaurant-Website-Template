@@ -1,12 +1,11 @@
+"use client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React, { FC } from "react";
+import Image, { ImageProps } from "next/image";
+import React, { FC, useEffect, useRef, useState } from "react";
 
-type CustomImageProps = {
+type CustomImageProps = ImageProps & {
   ratio: "16/9" | "5/4" | "1/1"; // アスペクト比を文字列で指定
-  src: string; // 画像のURL
-  alt: string; // 画像の代替テキスト
   containerClassName?: string; // コンテナの幅など個別指定（例: w-full など）
   className?: string; // 任意の追加クラス
 };
@@ -23,21 +22,40 @@ const ratioToNumber = (ratio: "16/9" | "5/4" | "1/1"): number => {
 };
 
 const CustomImage: FC<CustomImageProps> = ({
-  ratio,
   src,
   alt,
+  ratio,
   className,
   containerClassName,
 }) => {
+  const [retryKey, setRetryKey] = useState<number>(0);
+  const retryCount = useRef(0);
+
+  useEffect(() => {
+    retryCount.current = 0;
+  }, [src]);
+
+  // 画像読み込み失敗時のリトライ処理
+  const handleError = () => {
+    if (retryCount.current < 5) {
+      setTimeout(() => {
+        retryCount.current++;
+        setRetryKey((prev) => prev + 1);
+      }, 1000);
+    }
+  };
+
   return (
     <div className={cn("w-full relative", containerClassName)}>
       <AspectRatio ratio={ratioToNumber(ratio)}>
         <Image
+          key={retryKey}
           src={src}
           alt={alt}
           unoptimized={true}
           fill
           className={cn("rounded-md object-cover", className)}
+          onError={handleError}
         />
       </AspectRatio>
     </div>
