@@ -1,12 +1,15 @@
-import BusinessHours from '@/components/common/BusinessHours'
-import React from 'react'
+import BusinessHours from "@/components/common/BusinessHours";
+import ContactDetails from "@/components/common/ContactDetails";
+import fetchPropertyData from "@/lib/fetchPropertyData";
+import React from "react";
 
-function page() {
+const playground = async () => {
+  const restaurantData = await fetchPropertyData();
   return (
     <div>
-      <BusinessHours></BusinessHours>
+      <BusinessHours branchInfo={restaurantData.Main_Branch_Info} />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default playground;

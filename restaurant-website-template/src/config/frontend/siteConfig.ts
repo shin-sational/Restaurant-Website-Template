@@ -13,54 +13,19 @@ export const MENU_CATEGORIES = [
   { label: "DESSERT", menuId: "#dessert" },
 ];
 
-export const OPENING_HOURS = [
+export const BRANCH_INFORMATION = [
   {
-    day: "Monday",
-    opentime: "9",
-    openPeriod: "AM",
-    closetime: "6",
-    closePeriod: "PM",
+    name: "Robson Street",
+    image: "#",
+    adress: "xxx",
+    phoneNumber: "000-000-000",
+    email: "xxx@gmail.com",
   },
   {
-    day: "Tuesday",
-    opentime: "9",
-    openPeriod: "AM",
-    closetime: "6",
-    closePeriod: "PM",
-  },
-  {
-    day: "Wednesday",
-    opentime: "9",
-    openPeriod: "AM",
-    closetime: "6",
-    closePeriod: "PM",
-  },
-  {
-    day: "Thursday",
-    opentime: "9",
-    openPeriod: "AM",
-    closetime: "6",
-    closePeriod: "PM",
-  },
-  {
-    day: "Friday",
-    opentime: "9",
-    openPeriod: "AM",
-    closetime: "8",
-    closePeriod: "PM",
-  },
-  {
-    day: "Saturday",
-    opentime: "10",
-    openPeriod: "AM",
-    closetime: "8",
-    closePeriod: "PM",
-  },
-  {
-    day: "Sunday",
-    opentime: "10",
-    openPeriod: "AM",
-    closetime: "6",
-    closePeriod: "PM",
+    name: "Main Street",
+    image: "#",
+    adress: "xxx",
+    phoneNumber: "000-000-000",
+    email: "xxx@gmail.com",
   },
 ];

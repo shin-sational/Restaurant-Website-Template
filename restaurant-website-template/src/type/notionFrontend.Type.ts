@@ -56,7 +56,7 @@ export interface MainBranchInfo {
 }
 
 // サブブランチ情報の型
-interface SubBranchInfo {
+export interface SubBranchInfo {
   Name: string;
   Restaurant_Photo: string; // URL
   Address: string;

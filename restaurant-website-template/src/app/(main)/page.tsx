@@ -4,9 +4,11 @@ import React from "react";
 import ImageCarousel from "@/components/Home/ImageCarousel";
 import { CustomButton } from "@/components/common/atoms/CustomButton";
 import Link from "next/link";
-import DataFetcher from "@/components/common/DataFetcher";
+import ContactDetails from "@/components/common/ContactDetails";
 
 const Home = async () => {
+  const restaurantData = await fetchPropertyData();
+
   return (
     <DataFetcher>
       {(restaurantData) => (
@@ -31,12 +33,13 @@ const Home = async () => {
             </div>
             {/* メニュー画像 (クライアントサイドなため、コンポーネント化)*/}
             <ImageCarousel restaurantData={restaurantData} />
-
-            {/* メニュー遷移ボタン */}
-            <CustomButton variant="default">
-              <Link href="/menu">View the Menu</Link>
-            </CustomButton>
-          </div>
+        {/* メニュー遷移ボタン */}
+        <CustomButton variant="default">
+          <Link href="/menu">View the Menu</Link>
+        </CustomButton>
+      </div>
+      {/* location */}
+      <ContactDetails restaurantData={restaurantData} />
         </section>
       )}
     </DataFetcher>
